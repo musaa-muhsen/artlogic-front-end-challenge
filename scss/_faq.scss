@@ -1,0 +1,102 @@
+@import "_var";
+
+
+    .accordion {
+        width: 80%;
+        max-width: 1000px;
+        margin: 30px auto;
+        @include mobile {
+            width: 95%;
+            margin: 10px auto;
+        }
+        
+        .accordion-item {
+           // background: var(--greyLight);
+            //outline: var(--black) solid 1px;
+            // margin-top: 10px;
+            // margin-bottom: 10px;
+            .accordion-item-header {
+                //border-top: 1px solid  var(--greyDark);
+                border-bottom: 1px solid  var(--greyDark);
+                
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: 600 !important;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+                min-height: 3.5rem;
+                line-height: 1.25rem;
+                font-weight: normal;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                cursor: pointer;
+                @include mobile {
+                    font-size: 0.8rem;
+                    padding: 0.2rem 3rem 0.2rem 0.2rem;
+                }
+                
+                &::after {
+                    font-family:serif; 
+                    content: "\003E";//get entity arrow here 
+                    font-size: 1rem; 
+                    position: absolute;
+                    right: 1rem;
+                    top: 29%;
+                
+                    transition: transform 0.2s ease-in-out;
+                    //transform: rotate(90deg);
+                }
+                &.active::after {
+                  //content: '\2212';
+                  transform: rotate(90deg);
+                }
+                
+                // so whenever the active class is added to the accordion item header the content of the pseudo element will change from plus to minus, so if active class is removed content will change back to plus sign   
+    
+            }
+            .accordion-item-header.first {
+                //border-bottom: none;
+                border-top: 1px solid  var(--greyMed);
+            }
+            .accordion-item-header:last-child {
+                //border-top: none;
+            }
+            .accordion-item-body {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                border-bottom: 1px solid  var( --greyMed);
+                padding-left: 10px;
+                 ul {
+                     margin-top: 20px;
+                 }
+            }
+            .accordion-item-body-content {
+               
+                font-size: 15px;
+                padding: 0 1rem 1rem 1rem;
+                //line-height: 1.5rem;
+                @include mobile {
+                    
+                    padding: 0.5rem 1rem 1rem 1rem;
+                }
+                ul {
+                    li {
+                        a {
+                            color: var(--offBlack);
+                        }
+                        list-style:  circle inside none !important;
+                        margin-bottom: 10px;
+                        @include mobile {
+                            list-style:  circle outside none;
+                        }
+                    }
+                }
+                //
+            }
+    
+        }
+       
+    }
+    
