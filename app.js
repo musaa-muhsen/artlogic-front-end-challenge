@@ -1,18 +1,10 @@
 
-// button and panel 
-
 const dataFunc = async () => {
     try {
         const response = await fetch(`http://localhost:3333/api/`);
         const json = await response.json();
         console.log(json.rows);  
         formatData(json.rows);
-        // if (json.rows.length === 0) {
-        //     console.log('hello');   
-        // } else  {
-  
-        // }
-  
     } catch(err) {
         console.log(err)
     }
@@ -20,6 +12,7 @@ const dataFunc = async () => {
   
   dataFunc();
 
+  // button and panel 
 function formatData(data) {
     
     for (let i = 0; i < data.length; i++) {
@@ -28,8 +21,8 @@ function formatData(data) {
         
         const btn = document.createElement('BUTTON');
         btn.classList.add('accordian-btn');
-        btn.innerHTML = d.title;
-        document.getElementById('wrapper').appendChild(btn);
+        btn.innerHTML = (parseInt(i)+1)+ '. ' + d.title; // number and title
+        document.getElementById('accordian-wrapper').appendChild(btn);
        
         const panelDiv = document.createElement("div");
         const panelP = document.createElement('p');
@@ -38,7 +31,7 @@ function formatData(data) {
         panelDiv.appendChild(panelP)
         console.log(panelP)
         panelDiv.classList.add('panel');
-        document.getElementById('wrapper').appendChild(panelDiv);
+        document.getElementById('accordian-wrapper').appendChild(panelDiv);
 
         //btn.insertBefore()    
     }

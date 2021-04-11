@@ -5,67 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-       .red {
-           outline: red solid 1px;
-       }
-       button {
-           display: block;
-       }
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.accordian-btn {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-}
-
-.active , .accordian-btn:hover {
-  background-color: #ccc !important;
-}
-
-.accordian-btn:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2212";
-}
-
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-    </style>
+   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <!-- <div class="accordian-wrapper">
-        
-    </div> -->
-    <div id="wrapper">
+  <section class="main-container">
+    <div class="bg-img">
+        <div class="faq-info-container">
+               <div class="faq-info faq-info-1"><h3>artlogic</h3></div>
+               <div class="faq-info faq-info-2"><h1>improve your website <span class="upper-case">seo</span></h1></div>
+               <div class="faq-info faq-info-3"><h2>some <span class="upper-case">faq</span>s on search engine optimisation </h2></div>
+        </div>
+   </div>
 
-    </div>
-    
+
+   <div class="accordian-main-container">
+       <div class="accordian-title-container">
+           <h2> questions</h2>
+       </div>
+       <div id="accordian-wrapper">
+          
+       </div>
+       
+   </div>
+  </section>
+   
+
     <script src="app.js"></script>
 </body>
 </html>
+
+    <!-- <div class="accordian-wrapper">
+        artlogic
+
+        improve your website seo 
+
+        some faqs on search engine optimisation 
+
+        questions
+
+        display: grid;
+        place-items: center;
+    </div> -->
