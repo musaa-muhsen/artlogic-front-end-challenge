@@ -1,7 +1,7 @@
 
 const dataFunc = async () => {
     try {
-        const response = await fetch(`/api/`);
+        const response = await fetch(`http://localhost:3333/api/`);
         const json = await response.json();
         console.log(json.rows);  
         formatData(json.rows);
