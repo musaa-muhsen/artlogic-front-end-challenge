@@ -21,6 +21,11 @@
  .upper-case {
      text-transform: uppercase
  }
+//  .br-none {
+//     @media only screen and (max-width: 1000px) {
+// display: none !important;
+//     }
+//  }
  .main-container {
      display: flex;
      flex-direction: row;
@@ -56,7 +61,7 @@
     .faq-info-container {
         padding: 5% 5%;
         @media all and (max-width: 700px) {
-            padding: 6% 5.6%;
+            padding: 7% 5.6%;
         }
         //background:lavender;
         display: grid;
@@ -85,9 +90,13 @@
                 
                 font-size: 2rem;
                width: 70%;
-               @media all and (max-width: 700px) {
+               @media all and (max-width: 1000px) {
                 font-size: 1.4rem;
-                //width: 90%;
+                width: 90%;
+            }
+            @media all and (max-width: 700px) {
+                font-size: 1.3rem;
+                width: 90%;
             }
             }
 
@@ -100,6 +109,10 @@
                font-size: 3.4rem;
                width: 70%;
                top: 25%;
+               @media all and (max-width: 1400px) {
+                font-size: 3rem;
+                width: 90%;
+            }
                @media all and (max-width: 1100px) {
                 font-size: 2.5rem;
                 width: 60%;
@@ -119,12 +132,12 @@
                 font-size: 1.6rem;
                width: 50%;
                bottom: 0;
-            //    @media all and (max-width: 1100px) {
-            //     font-size: 2.5rem;
-            //     width: 60%;
-            // }
-            @media all and (max-width: 700px) {
+               @media all and (max-width: 1300px) {
                 font-size: 1.4rem;
+                width: 90%;
+            }
+            @media all and (max-width: 700px) {
+                font-size: 1.3rem;
                 width: 90%;
             }
 
