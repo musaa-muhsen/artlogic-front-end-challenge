@@ -1,8 +1,10 @@
 const path = require('path');
+//const regeneratorRuntime = require("regenerator-runtime");
+
 
 module.exports = {
     entry: {
-        main: "./app.js"
+        main: "./client/app.js"
       },
       module: {
         rules: [
@@ -12,16 +14,24 @@ module.exports = {
             use: {
               loader: 'babel-loader',
               options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
+                plugins: [
+                  '@babel/transform-runtime'
+              ]
               }
             }
           }
         ]
         },
+        // [
+        //   "plugins": ["@babel/plugin-transform-runtime"],
+
+        // ]
+       
 
     output: {
         //filename: "main.[contenthash].js",
         filename: "index_bundle.js",
-        path: path.resolve(__dirname, "client/dist"),
+        path: path.resolve(__dirname, "./client/dist"),
     }
 }
