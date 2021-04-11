@@ -12,7 +12,7 @@ const dataFunc = async () => {
   
   dataFunc();
 
-
+  
 
   // button and panel 
 function formatData(data) {
@@ -55,7 +55,7 @@ function formatData(data) {
             this.classList.toggle("active");
             let currentBtnPanel = this.nextElementSibling;
             if (currentBtnPanel .style.maxHeight) { 
-                currentBtnPanel .style.maxHeight = null; // if null which it probably will be make bigger 
+                currentBtnPanel .style.maxHeight = null; 
               } else {
                 currentBtnPanel.style.maxHeight = currentBtnPanel.scrollHeight + "px";
               } 
