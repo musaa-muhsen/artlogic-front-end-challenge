@@ -17,12 +17,85 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: var(--font-1);
 }
 
 .upper-case {
   text-transform: uppercase;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1400px) {
+  .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.bg-img {
+  background-image: url("../images/background.jpg");
+  background-color: var(--black-3);
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
+}
+
+.bg-img .faq-info-container {
+  background: lavender;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+}
+
+.bg-img .faq-info-container .faq-info {
+  color: #fff;
+  display: -ms-grid;
+  display: grid;
+}
+
+.bg-img .faq-info-container .faq-info h1::first-letter, .bg-img .faq-info-container .faq-info h3::first-letter {
+  text-transform: capitalize;
+}
+
+.bg-img .faq-info-container .faq-info-2 h1 {
+  font-size: 3.4rem;
+  width: 70%;
+}
+
+.accordian-main-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 50%;
+          flex: 1 50%;
 }
 
 :root {
@@ -37,13 +110,21 @@ body {
   --black-3: #000f31;
 }
 
+.accordian-main-container .accordian-title-container h2::first-letter {
+  text-transform: capitalize;
+}
+
+.accordian-main-container #accordian-wrapper {
+  outline: red solid 1px;
+}
+
 button {
   display: block;
 }
 
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: #fff;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
@@ -51,8 +132,8 @@ button {
 }
 
 .accordian-btn {
-  background-color: #eee;
-  color: #444;
+  background-color: #fff;
+  color: #000;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -60,18 +141,17 @@ button {
   text-align: left;
   outline: none;
   font-size: 15px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  font-weight: 600;
 }
 
-.active, .accordian-btn:hover {
-  background-color: #ccc !important;
+.accordian-btn:hover {
+  color: var(--greyMed-1) !important;
 }
 
 .accordian-btn:after {
   content: '\002B';
-  color: #777;
-  font-weight: bold;
   float: right;
   margin-left: 5px;
 }
@@ -81,12 +161,17 @@ button {
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 0 20px;
+  line-height: 1.7;
   background-color: white;
   max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
+  -webkit-transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.panel p {
+  padding: 20px 0;
+  color: #777;
 }
 
 /*

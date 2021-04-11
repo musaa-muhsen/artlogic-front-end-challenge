@@ -8,6 +8,9 @@
      box-sizing: border-box;
  }
  
+ html {
+     font-size: 16px;
+ }
 
  body {
     font-family: var(--font-1)
@@ -16,8 +19,76 @@
  .upper-case {
      text-transform: uppercase
  }
+ .main-container {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     max-width: 1500px;
+     width: 100%;
+     margin: 0 auto;
+    //overflow-x: hidden;
+    @media only screen and (max-width: 1400px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 
+ }
+
+
+.bg-img {
+    //overflow-x: hidden;
+    background-image: url("../images/background.jpg");
+    background-color:var(--black-3);
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    flex: 1 50%;
+    .faq-info-container {
+        background:lavender;
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        //align-content: space-between;
+        //flex-direction: column;
+        height: 100%;
+        //align-items: stretch;
+        .faq-info {
+            color: #fff;
+            display: grid;
+       
+            h1::first-letter, h3::first-letter {
+               text-transform: capitalize;
+            }
+
+            
+        }
+        .faq-info-1 {
+            h3 {
+
+            }
+
+        }
+        .faq-info-2 {
+            h1 {
+               font-size: 3.4rem;
+               width: 70%;
+            }
+            
+        }
+        .faq-info-3 {
+            h3 {
+
+            }
+            
+        }
+
+    }
+}
  
+.accordian-main-container {
+    flex: 1 50%;
+}
  @import "_accordian";
 
  
